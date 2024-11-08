@@ -1,17 +1,15 @@
-const lampadina = document.getElementsById('lampadinaSpenta');
-const btn = document.getElementById('btn');
+const lampElem = document.getElementById('lamp-img');
+console.log(lampElem);
+const btnElem = document.getElementById('btn');
+console.log(btnElem);
 
-const imgLamp = document.getElementById('lampadinaSpenta');
-imgLamp.src = "./img/white_lamp.png";
-imgLamp.alt = "foto della lampadina spenta";
 
-const imgLamp = document.getElementById('lampadinaAccesa');
-imgLamp.src = "./img/yellow_lamp.png";
-
-btn.addEventListener("click", function() {
-if (lampadina.classList.contains("lampadinaAccesa")) {
-imgLamp.classList.remove("lampadinaAccesa");
-} else {
-    imgLamp.classList.add("lampadinaAccesa");
-}
-})
+btnElem.addEventListener("click", function() {
+    if (lampElem.src.includes("white_lamp")) {
+    lampElem.src = "./img/yellow_lamp.png";
+    btnElem.innerHTML = "Spegni";
+    } else {
+        lampElem.src = "./img/white_lamp.png"
+        btnElem.innerHTML = "Accendi";
+    }
+});
